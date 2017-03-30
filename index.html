@@ -19,14 +19,30 @@
       <form>
         <div class="form-group" id="enterName">
           <label for="">Name</label>
-          <input class="form-control" type="text" name="name" id="name">
+          <input class="form-control" type="text" name="Name" id="name">
         </div>
-        <button type="submit" name="button" class="btn btn-default">Enter</button>
+        <button type="submit" class="btn btn-default">Enter</button>
       </form>
-      <div class="" id="results">
-        <button type="button" class="btn btn-danger" name="button" id="rollDice">Roll Dice</button>
-        <button type="button" class="btn btn-success" name="button" id="holdDice">Hold</button>
+      <h1>Total Score</h1>
+      <p id="totalScore">0</p>
+      <div class="row" id="results">
+        <div class="col-xs-6">
+          <h2>Roll score</h2>
+          <p id="score">0</p>
+          <button type="button" class="btn btn-danger" name="button" id="rollDice">Roll Dice</button>
+        </div>
+        <div class="col-xs-6">
+          <h2>Number of rolls</h2>
+          <p id="tracker">0</p>
+          <button type="button" class="btn btn-success" name="button" id="holdDice">Hold</button>
+        </div>
+
+
       </div>
+      <div class="win">
+        YOU WiN!
+      </div>
+
     </div>
   </body>
 </html>

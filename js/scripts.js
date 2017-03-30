@@ -9,11 +9,20 @@ function Player(playerName){
 
 Player.prototype.hold = function(){
   this.total+= this.roll;
+  this.roll = 0;
+  $("#totalScore").text(this.total);
   console.log("Total score is " + this.total);
 }
 
 Player.prototype.addTotal = function(dice){
   this.roll+= dice;
+  this.tracker++;
+  $("#tracker").text(this.tracker);
+  $("#score").text(this.roll);
+  if ( this.total + this.roll  >=  100){
+    $(".win").show();
+    $("#totalScore").text(this.total+= this.roll);
+  }
   console.log("Roll total is " + this.roll);
 }
 
@@ -26,6 +35,7 @@ var diceRolls = function() {
   min = Math.ceil(1);
   max = Math.floor(6);
   return Math.floor(Math.random() * (max - min)) + min;
+
 }
 
 
@@ -56,9 +66,12 @@ $(document).ready(function() {
     console.log(name);
     $("#rollDice").click(function() {
       generator(name);
+
+
     });
     $("#holdDice").click(function() {
       name.hold();
+
     });
   });
 });
